@@ -1,0 +1,55 @@
+:root{
+    --font-size-title: 25px;
+    --font-size-text: 18px;
+  }
+  .todo{
+    width: 450px;
+    margin: 30px auto;
+  }
+  .todo__title{
+    text-align: center;
+    font-size: var(--font-size-title);
+    margin-bottom: 30px;
+  }
+  .todo__input{
+    margin: 10px 0;
+    height: 40px;
+  }
+  .todo__input input{
+    height: 41px;
+    width: 75%;
+    margin-right: 20px;
+    outline: none;
+    border: 1px solid rgb(171, 173, 174);
+    color: rgb(171, 173, 174);
+    padding-left: 10px;
+  }
+  .todo__input button{
+    width: 20%;
+    height: 41px;
+    background:rgb(97, 99, 187) ;
+    color: white;
+    border: none;
+  }
+  .todo__input input,
+  .todo__input button{
+    border-radius: 8px;
+  }
+  ul.todo__item{
+    margin-top: 15px;
+    line-height: 30px;
+  }
+  ul.todo__item li{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  ul.todo__item li input{
+    width: 20px;
+    height: 20px;
+  }
+  label{
+    margin-left: 6px;
+  }
+  .line-throw{
+    text-decoration: line-through;
+  }

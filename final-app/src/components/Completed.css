@@ -1,0 +1,49 @@
+:root{
+    --font-size-title: 25px;
+    --font-size-text: 18px;
+  }
+  .todo{
+    width: 450px;
+    margin: 30px auto;
+  }
+  .todo__title{
+    text-align: center;
+    font-size: var(--font-size-title);
+    margin-bottom: 30px;
+  }
+  .line-throw{
+    text-decoration: line-through;
+  }
+  .todo__done{
+    position: relative;
+    margin-top: 15px;
+    line-height: 25px;
+  }
+  .todo__done input{
+    width: 20px;
+    height: 20px;
+  }
+  input{
+    cursor: pointer;
+  }
+  label{
+    margin-left: 6px;
+    font-weight: 600;
+  }
+  .todo__done i.icon__delete{
+    position: absolute;
+    right: 15px;
+    font-size: var(--font-size-title);
+  }
+  .todo__done button{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    margin-top: 30px;
+  }

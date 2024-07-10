@@ -1,0 +1,26 @@
+ul.todo__nav{
+    width: 450px;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(171, 173, 174);
+  }
+  ul.todo__nav li{
+    width: 85px;
+    height: 30px;
+    flex-basis: 1;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+  }
+  ul.todo__nav li a{
+    width: 85px;
+    text-align: center;
+  }
+  .active{
+    border-bottom: 3px solid rgb(75, 78, 208);
+  }
+  .line-throw{
+    text-decoration: line-through;
+  }
