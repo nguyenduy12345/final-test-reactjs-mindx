@@ -4,22 +4,40 @@ import Header from "/src/components/Header.jsx";
 import './Active.css'
 const Active = () => {
   const getCompleTed = localStorage.getItem("DONE") ? JSON.parse(localStorage.getItem("DONE")) : []
-  const getToDo = localStorage.getItem("TODO")
+  const getToDoList = localStorage.getItem("TODO")
     ? JSON.parse(localStorage.getItem("TODO"))
     : [];
-  const [todo, setToDo] = useState(getToDo);
+  const [toDo, setToDo] = useState(getToDoList);
   const [check, setCheck] = useState([])
   const changeInput = (e) => {
     e.preventDefault();
-    setToDo([...todo, e.target["0"].value]);
+    setToDo([...toDo, e.target["0"].value]);
     localStorage.setItem(
       "TODO",
-      JSON.stringify([...todo, e.target["0"].value])
+      JSON.stringify([...toDo, e.target["0"].value])
     );
   };
   const changeCheckItem = useCallback((item) => {
     setCheck(item)
-    const result = getCompleTed.findIndex(todoItem => todoItem == item)
+    setCheck(item) 
+    const getToDo = localStorage.getItem("TODO")
+    ? JSON.parse(localStorage.getItem("TODO"))
+    : [];
+    const updateToDo = getToDo.filter(toDoItem => toDoItem != item)
+    if(updateToDo && updateToDo.length > 0 ) {
+      setToDo(updateToDo)
+      localStorage.setItem(
+        "TODO",
+        JSON.stringify(updateToDo)
+      );
+    }else{
+      setToDo([])
+      localStorage.setItem(
+        "TODO",
+        JSON.stringify(updateToDo)
+      );
+    }
+    const result = getCompleTed.findIndex(toDoItem => toDoItem == item)
     if(result > -1){
       return
     }else{
@@ -38,7 +56,7 @@ const Active = () => {
           </form>
         </div>
         <ul className="todo__item">
-          {todo.map((item, index) => (
+          {toDo.map((item, index) => (
             <li key={index}>
               <input type="checkbox" onClick={() =>changeCheckItem(item)}/>
               <label>{item}</label>

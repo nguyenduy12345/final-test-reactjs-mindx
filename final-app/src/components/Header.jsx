@@ -5,7 +5,7 @@ import './Header.css'
 const Header = () => {
   return (
     <ul className="todo__nav">
-          <li className={({ isActive }) => (isActive ? "active" : "")}>
+          <li>
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? "active" : "")}
